@@ -1,22 +1,12 @@
 public class Main {
    public static void main(String[] args){
      
-     Vehicle v1 = new Vehicle();
-     v1.brand = "Toyota";
-     v1.brand = "Mustang";
-     v1.year = 2019;
-     v1.displayInfo(); 
-     
-     Vehicle v2 = new Vehicle();
-     v2.brand = "Volkswagen";
-     v2.brand = "Jetta";
-     v2.year =  1998;
+     Vehicle v1 = new Vehicle("Toyota", "Mustang", 2019);
+     Vehicle v2 = new Vehicle("Volkswagen", "Jetta", 1998);
+     Vehicle v3 = new Vehicle("Toyota", "Highlander", 2005);
+    
+     v1.displayInfo();
      v2.displayInfo();
-     
-     Vehicle v3 = new Vehicle();
-     v3.brand = "Toyota";
-     v3.model = "Highlander";
-     v3.year = 2005;
      v3.displayInfo();
           
      System.out.println("\nVehicile 1");
