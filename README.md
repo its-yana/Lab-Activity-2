@@ -1,43 +1,32 @@
-# Laboratory Activity 4 - Encapsulation
+# Laboratory Activity 1 - Semi Finals - Polymorphism
 
 Name: Dianne Margareth C. Liquit
 Section: 2A
 
 ## Console Output
 
-Toyota - Mustang - 2019
-Volkswagen - Jetta - 1998
-Toyota - Highlander - 2005
+=== Parent References ===
+Mitsubishi - Mirage G4 - 2019
+Doors: 4
 
-Vehicle 1
-Age: 7
-Vintage: false
+=== Truck ===
+Freightliner - Freightliner Cascadia - 2026
+Wheels: 10
 
-Vehicle 2
-Age: 28
-Vintage: true
+=== Motorcycle ===
+Harley-Davidson - Street 750 - 2020
+Engine Type: V-Twin
 
-Vehicle 3
-Age: 21
-Vintage: false
+=== Method Parameters ===
+Geely - EX5 - 2000
+Doors: 4
 
-Getters
-Brand: Toyota
-Model: Mustang
-Year: 2019
+=== Array of Vehicles ===
+Mitsubishi - Mirage G4 - 2019
+Doors: 4
 
-setYear Tests
-setYear(2000): true
-Stored year: 2000
-Age: 26
-Vintage: true
+Freightliner - Freightliner Cascadia - 2026
+Wheels: 10
 
-setYear(1885): false
-Stored year: 2000
-
-setYear(2027): false
-Stored year: 2000
-
-Constructor Validation Tests
-Vehicle with year 1885: 2026
-Vehicle with year 2027: 2026
+Harley-Davidson - Street 750 - 2020
+Engine Type: V-Twin
