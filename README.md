@@ -1,78 +1,64 @@
-# Lab Activity 2: Abstraction in Java
+# Lab Activity 2: Interfaces in Java
 
 Name: Dianne Margareth C. Liquit
 Section: 2A
 
-## Description
-This activity demonstrates abstraction in Java using an abstract class and method overriding. The `Vehicle` class is declared as an abstract class with four abstract movement methods. The `Car`, `Truck`, and `Motorcycle` classes extend `Vehicle` and provide their own implementations of these methods.
+# Laboratory Activity: Interfaces
 
-## Classes
+## Overview
+This activity continues the previous Abstraction and Polymorphism project by implementing Interfaces in Java.
 
-- **Vehicle.java** – An abstract class that contains vehicle information and four abstract movement methods.
-- **Car.java** – A subclass of `Vehicle` that implements the movement methods and displays the number of doors.
-- **Truck.java** – A subclass of `Vehicle` that implements the movement methods and displays the number of wheels.
-- **Motorcycle.java** – A subclass of `Vehicle` that implements the movement methods and displays the engine type.
-- **Main.java** – Contains the main method, creates vehicle objects, and demonstrates abstraction and polymorphism.
+## Objectives
+- Create a `Serviceable` interface.
+- Implement the interface in Car, Motorcycle, Truck, and Printer classes.
+- Use a `Serviceable[]` array to demonstrate interface polymorphism.
+- Use a `Vehicle[]` array to demonstrate inheritance and polymorphism.
+- Practice implementing methods from an interface.
 
-## Abstract Methods
+## Classes and Interface
 
-The `Vehicle` class declares the following abstract methods:
+### 1. Serviceable.java
+Defines the `service()` method that must be implemented by the classes.
 
-- `moveForward()`
-- `moveBackwards()`
-- `moveLeft()`
-- `moveRight()`
+### 2. Vehicle.java
+An abstract parent class containing vehicle fields, constructors, getters, setters, and abstract movement methods.
 
-Each subclass overrides these methods to display its own movement messages.
+### 3. Car.java
+Extends Vehicle and implements Serviceable. Includes car information and service behavior.
 
-## Sample Output
+### 4. Motorcycle.java
+Extends Vehicle and implements Serviceable. Includes motorcycle information and service behavior.
 
-```text
-=== Parent References ===
+### 5. Truck.java
+Extends Vehicle and implements Serviceable. Includes truck information and service behavior.
+
+### 6. Printer.java
+Implements Serviceable without extending Vehicle.
+
+### 7. Main.java
+Creates objects, uses the `performService()` helper method, and demonstrates polymorphism using Serviceable and Vehicle arrays.
+
+Sample Output
+
+=== Serviceable Items ===
+Car: check oil and brakes.
+Motorcycle: inspect tires and brakes.
+Truck: inspect cargo brakes.
+Printer: check ink and paper.
+
+=== Vehicle Information ===
 Mitsubishi - Mirage G4 - 2019
 Doors: 4
-A car moves forward.
-A car moves backwards.
-A car moves left.
-A car moves right.
+A car is moving.
 
-=== Truck ===
-Freightliner - Freightliner Cascadia - 2026
-Wheels: 10
-A truck moves forward.
-A truck moves backwards.
-A truck moves left.
-A truck moves right.
-
-=== Motorcycle ===
 Harley-Davidson - Street 750 - 2020
 Engine Type: V-Twin
-A motorcycle moves forward.
-A motorcycle moves backwards.
-A motorcycle moves left.
-A motorcycle moves right.
-```
+A motorcycle is moving.
 
-*Note: The program also demonstrates method parameters and an array of different vehicle objects.*
+Freightliner - Freightliner Cascadia - 2026
+Wheels: 10
+A truck is moving.
 
-## How to Run
+Expected Result
 
-Compile the Java files:
-
-```bash
-javac *.java
-```
-
-Run the program:
-
-```bash
-java Main
-```
-
-## Concepts Demonstrated
-
-- Abstraction
-- Abstract classes and methods
-- Inheritance
-- Method overriding
-- Polymorphism
+One interface allows the same helper method to work with different implementing classes. The abstract Vehicle implementation continues to work through its subclasses.
