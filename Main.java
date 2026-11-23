@@ -1,65 +1,102 @@
+
 public class Main {
 
-   public static void printDetails(Vehicle vehicle) {
-      vehicle.displayInfo();
-   }
-      public static void main(String[] args){
+    public static void performService(Serviceable item) {
+        item.service();
+    }
 
-      // DEMO 1 : Parent References 
-      System.out.println("=== Parent References ===");
-      Vehicle vehicle = new Car("Mitsubishi", "Mirage G4", 2019, 4);
-      vehicle.displayInfo();
-      vehicle.moveForward();
-      vehicle.moveBackwards();
-      vehicle.moveLeft();
-      vehicle.moveRight();
-      System.out.println();
+    public static void printDetails(Vehicle vehicle) {
+        vehicle.displayInfo();
+    }
 
-      // 1.1 The same variable now refers to a Truck object
-      System.out.println("=== Truck ===");
-      Truck truck = new Truck("Freightliner", "Freightliner Cascadia", 2026, 10);
-      printDetails(truck);
-      truck.moveForward();
-      truck.moveBackwards();
-      truck.moveLeft();
-      truck.moveRight();
-      System.out.println();
+    public static void main(String[] args) {
 
-      // 1.2 The same variable now refers to a Motorcycle object
-      System.out.println("=== Motorcycle ===");
-      Motorcycle motorcycle = new Motorcycle("Harley-Davidson", "Street 750", 2020, "V-Twin");
-      printDetails(motorcycle);
-      motorcycle.moveForward();
-      motorcycle.moveBackwards();
-      motorcycle.moveLeft();
-      motorcycle.moveRight();
-      System.out.println(); 
+        // Create objects
+        Car car = new Car("Mitsubishi", "Mirage G4", 2019, 4);
+        Motorcycle motorcycle = new Motorcycle("Harley-Davidson", "Street 750", 2020, "V-Twin");
+        Truck truck = new Truck("Freightliner", "Freightliner Cascadia", 2026, 10);
+        Printer printer = new Printer();
 
-      // DEMO 2 : One method accept different Vehicle subclasses
-      System.out.println("=== Method Parameters ===");
-      Car car = new Car("Geely", "EX5", 2000, 4);
-      printDetails(car);
-      car.moveForward();
-      car.moveBackwards();
-      car.moveLeft();
-      car.moveRight();
-      System.out.println(); 
+        // DEMO 1: Serviceable Array
+        System.out.println("=== Serviceable Items ===");
 
-      // DEMO 3 : One array holds different Vehicle subclasses
-      System.out.println("=== Array of Vehicles ===");
+        Serviceable[] serviceItems = {car, motorcycle, truck, printer};
 
-      Vehicle[] vehicles = {
-          new Car("Mitsubishi", "Mirage G4", 2019, 4),
-          new Truck("Freightliner", "Freightliner Cascadia", 2026, 10),
-          new Motorcycle("Harley-Davidson", "Street 750", 2020, "V-Twin")
-      };
-      for (Vehicle currentVehicle : vehicles) {
-          printDetails(currentVehicle);
-          currentVehicle.moveForward();
-          currentVehicle.moveBackwards();
-          currentVehicle.moveLeft();
-          currentVehicle.moveRight();
-          System.out.println(); 
-      }
-   }
+        for (Serviceable item : serviceItems) {
+            performService(item);
+        }
+
+        // DEMO 2: Vehicle Array
+        System.out.println("\n=== Vehicle Information ===");
+
+        Vehicle[] vehicles = {car, motorcycle, truck};
+
+        for (Vehicle vehicle : vehicles) {
+            vehicle.displayInfo();
+            vehicle.move();
+            System.out.println();
+        }
+
+        // DEMO 3: Parent References
+        System.out.println("=== Parent References ===");
+
+        Vehicle vehicle = new Car("Mitsubishi", "Mirage G4", 2019, 4);
+        vehicle.displayInfo();
+        vehicle.moveForward();
+        vehicle.moveBackwards();
+        vehicle.moveLeft();
+        vehicle.moveRight();
+        System.out.println();
+
+        // DEMO 4: Truck
+        System.out.println("=== Truck ===");
+
+        Truck truckDemo = new Truck("Freightliner", "Freightliner Cascadia", 2026, 10);
+        printDetails(truckDemo);
+        truckDemo.moveForward();
+        truckDemo.moveBackwards();
+        truckDemo.moveLeft();
+        truckDemo.moveRight();
+        System.out.println();
+
+        // DEMO 5: Motorcycle
+        System.out.println("=== Motorcycle ===");
+
+        Motorcycle motorcycleDemo = new Motorcycle("Harley-Davidson", "Street 750", 2020, "V-Twin");
+        printDetails(motorcycleDemo);
+        motorcycleDemo.moveForward();
+        motorcycleDemo.moveBackwards();
+        motorcycleDemo.moveLeft();
+        motorcycleDemo.moveRight();
+        System.out.println();
+
+        // DEMO 6: Car
+        System.out.println("=== Car ===");
+
+        Car carDemo = new Car("Geely", "EX5", 2000, 4);
+        printDetails(carDemo);
+        carDemo.moveForward();
+        carDemo.moveBackwards();
+        carDemo.moveLeft();
+        carDemo.moveRight();
+        System.out.println();
+
+        // DEMO 7: Array of Vehicles
+        System.out.println("=== Array of Vehicles ===");
+
+        Vehicle[] vehicleArray = {
+            new Car("Mitsubishi", "Mirage G4", 2019, 4),
+            new Truck("Freightliner", "Freightliner Cascadia", 2026, 10),
+            new Motorcycle("Harley-Davidson", "Street 750", 2020, "V-Twin")
+        };
+
+        for (Vehicle currentVehicle : vehicleArray) {
+            printDetails(currentVehicle);
+            currentVehicle.moveForward();
+            currentVehicle.moveBackwards();
+            currentVehicle.moveLeft();
+            currentVehicle.moveRight();
+            System.out.println();
+        }
+    }
 }
