@@ -1,64 +1,43 @@
-# Lab Activity 2: Interfaces in Java
 
-Name: Dianne Margareth C. Liquit
-Section: 2A
+# Java Packages - Vehicle Project
 
-# Laboratory Activity: Interfaces
 
-## Overview
-This activity continues the previous Abstraction and Polymorphism project by implementing Interfaces in Java.
+# Dianne Margareth C Liquit
+# BSIT 2A
 
-## Objectives
-- Create a `Serviceable` interface.
-- Implement the interface in Car, Motorcycle, Truck, and Printer classes.
-- Use a `Serviceable[]` array to demonstrate interface polymorphism.
-- Use a `Vehicle[]` array to demonstrate inheritance and polymorphism.
-- Practice implementing methods from an interface.
+## Description: 
+This project demonstrates how to organize Java classes and interfaces using packages. It uses different packages to separate vehicle classes, interfaces, devices, and the main application.
 
-## Classes and Interface
+## Project Structure
 
-### 1. Serviceable.java
-Defines the `service()` method that must be implemented by the classes.
+```text
+src/
+├── vehicles/
+│   ├── Vehicle.java
+│   ├── Car.java
+│   ├── Motorcycle.java
+│   └── Truck.java
+├── contracts/
+│   └── Serviceable.java
+├── devices/
+│   └── Printer.java
+└── app/
+    └── Main.java
+```
 
-### 2. Vehicle.java
-An abstract parent class containing vehicle fields, constructors, getters, setters, and abstract movement methods.
+## Packages
 
-### 3. Car.java
-Extends Vehicle and implements Serviceable. Includes car information and service behavior.
+- **vehicles** – Contains the Vehicle, Car, Motorcycle, and Truck classes.
+- **contracts** – Contains the Serviceable interface.
+- **devices** – Contains the Printer class.
+- **app** – Contains the Main class, which runs the program.
 
-### 4. Motorcycle.java
-Extends Vehicle and implements Serviceable. Includes motorcycle information and service behavior.
+## Concepts Used
 
-### 5. Truck.java
-Extends Vehicle and implements Serviceable. Includes truck information and service behavior.
+- Java Packages
+- Classes and Objects
+- Inheritance
+- Polymorphism
+- Abstraction
+- Interfaces
 
-### 6. Printer.java
-Implements Serviceable without extending Vehicle.
-
-### 7. Main.java
-Creates objects, uses the `performService()` helper method, and demonstrates polymorphism using Serviceable and Vehicle arrays.
-
-Sample Output
-
-=== Serviceable Items ===
-Car: check oil and brakes.
-Motorcycle: inspect tires and brakes.
-Truck: inspect cargo brakes.
-Printer: check ink and paper.
-
-=== Vehicle Information ===
-Mitsubishi - Mirage G4 - 2019
-Doors: 4
-A car is moving.
-
-Harley-Davidson - Street 750 - 2020
-Engine Type: V-Twin
-A motorcycle is moving.
-
-Freightliner - Freightliner Cascadia - 2026
-Wheels: 10
-A truck is moving.
-
-Expected Result
-
-One interface allows the same helper method to work with different implementing classes. The abstract Vehicle implementation continues to work through its subclasses.
