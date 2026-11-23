@@ -1,3 +1,5 @@
+package vehicles;   
+
 public abstract class Vehicle {
 
     private String brand;
@@ -34,7 +36,7 @@ public abstract class Vehicle {
         return false;
     }
 
-    void displayInfo(){
+    public void displayInfo(){
         System.out.println(brand + " - " + model + " - " + year);
     }
 
